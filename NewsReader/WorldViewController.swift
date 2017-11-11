@@ -79,7 +79,7 @@ class WorldViewController: BaseViewController, UITableViewDelegate, UITableViewD
         let cell = worldTableView.dequeueReusableCell(withIdentifier: "WorldCell", for: indexPath) as! WorldTableViewCell
         
         cell.titleWorldLabel.text = self.worldArticles?[indexPath.item].headLineWorld
-        //cell.descWorldLabel.text = self.worldArticles?[indexPath.item].descWorld
+        cell.descWorldLabel.text = self.worldArticles?[indexPath.item].descWorld
         cell.imgWorldView.downloadImageWorld(from: (self.worldArticles?[indexPath.item].imageURLWorld!)!)
         
         return cell
