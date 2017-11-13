@@ -22,6 +22,7 @@
 		53F14EC91FB1EB3F00B286B9 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 53F14EC71FB1EB3F00B286B9 /* LaunchScreen.storyboard */; };
 		53F14ED11FB1EEE700B286B9 /* ArticleCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53F14ED01FB1EEE700B286B9 /* ArticleCell.swift */; };
 		53F14ED31FB1F01800B286B9 /* Article.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53F14ED21FB1F01800B286B9 /* Article.swift */; };
+		8473B9381FB9F06A0074D7C2 /* DetailAllNewsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8473B9371FB9F06A0074D7C2 /* DetailAllNewsVC.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -42,6 +43,7 @@
 		53F14ECA1FB1EB3F00B286B9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		53F14ED01FB1EEE700B286B9 /* ArticleCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleCell.swift; sourceTree = "<group>"; };
 		53F14ED21FB1F01800B286B9 /* Article.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Article.swift; sourceTree = "<group>"; };
+		8473B9371FB9F06A0074D7C2 /* DetailAllNewsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailAllNewsVC.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -78,6 +80,7 @@
 				53F14EC01FB1EB3F00B286B9 /* ViewController.swift */,
 				53F14ED01FB1EEE700B286B9 /* ArticleCell.swift */,
 				53F14ED21FB1F01800B286B9 /* Article.swift */,
+				8473B9371FB9F06A0074D7C2 /* DetailAllNewsVC.swift */,
 				5326C4231FB47EE3002531D3 /* UkraineViewController.swift */,
 				5326C4211FB47E91002531D3 /* UkraineViewCell.swift */,
 				5326C4251FB47F89002531D3 /* UkraineArticle.swift */,
@@ -176,6 +179,7 @@
 				5326C4221FB47E91002531D3 /* UkraineViewCell.swift in Sources */,
 				53F14ED31FB1F01800B286B9 /* Article.swift in Sources */,
 				5326C4241FB47EE3002531D3 /* UkraineViewController.swift in Sources */,
+				8473B9381FB9F06A0074D7C2 /* DetailAllNewsVC.swift in Sources */,
 				53F14EC11FB1EB3F00B286B9 /* ViewController.swift in Sources */,
 				53F14EBF1FB1EB3F00B286B9 /* AppDelegate.swift in Sources */,
 				53F14ED11FB1EEE700B286B9 /* ArticleCell.swift in Sources */,

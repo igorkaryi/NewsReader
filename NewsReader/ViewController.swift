@@ -113,4 +113,13 @@ extension UIImageView {
     }
 }
 
+func prepareForSegue(segue:UIStoryboardSegue, sender:AnyObject?){
+    if segue.identifier == "commander" {
+        if let nextVC: DetailAllNewsVC = segue.destination as? DetailAllNewsVC {
+                
+                nextVC.titleLabel.text = "rgferg"
+            }
+}
 
+
+}

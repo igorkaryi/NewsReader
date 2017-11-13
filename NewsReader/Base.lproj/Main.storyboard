@@ -61,7 +61,7 @@
                                             <outlet property="descLabel" destination="CpP-jk-TUx" id="OKV-zW-X7g"/>
                                             <outlet property="imgView" destination="8iB-Rh-tyZ" id="9Fd-QF-q1r"/>
                                             <outlet property="titleLabel" destination="L8s-Z8-szw" id="bDp-QX-d2u"/>
-                                            <segue destination="pO1-ld-tdA" kind="show" id="unx-gS-zpn"/>
+                                            <segue destination="pO1-ld-tdA" kind="show" identifier="commander" id="unx-gS-zpn"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -83,20 +83,32 @@
             </objects>
             <point key="canvasLocation" x="432.80000000000001" y="106.59670164917542"/>
         </scene>
-        <!--View Controller-->
+        <!--Detail All NewsVC-->
         <scene sceneID="1Yy-m0-9bR">
             <objects>
-                <viewController id="pO1-ld-tdA" sceneMemberID="viewController">
+                <viewController id="pO1-ld-tdA" customClass="DetailAllNewsVC" customModule="NewsReader" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Rdd-tI-PLJ">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fYA-5b-OWZ">
+                                <rect key="frame" x="154" y="213" width="117" height="36"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <color key="backgroundColor" red="0.5961347857" green="0.9546966281" blue="0.76645881100000002" alpha="0.5" colorSpace="custom" customColorSpace="sRGB"/>
                         <viewLayoutGuide key="safeArea" id="W3p-J7-BXD"/>
                     </view>
+                    <connections>
+                        <outlet property="titleLabel" destination="fYA-5b-OWZ" id="lL9-Ya-i4H"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="jhj-2c-LG0" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="433" y="816"/>
+            <point key="canvasLocation" x="432.80000000000001" y="815.44227886056979"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="57s-11-fbD">
