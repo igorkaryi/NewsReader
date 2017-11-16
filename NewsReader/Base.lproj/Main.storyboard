@@ -104,8 +104,8 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" maximumZoomScale="5" editable="NO" text="Описание" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="qSv-00-0Be">
-                                <rect key="frame" x="16" y="368" width="343" height="301"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                <rect key="frame" x="16" y="370" width="343" height="277"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES" heightSizable="YES"/>
                                 <color key="backgroundColor" red="0.9150718538" green="0.93429213759999996" blue="0.83121310049999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -123,7 +123,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="jhj-2c-LG0" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="432.80000000000001" y="815.44227886056979"/>
+            <point key="canvasLocation" x="1142" y="1075"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="57s-11-fbD">
@@ -235,7 +235,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vcK-Er-ekW" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="433" y="-558"/>
+            <point key="canvasLocation" x="1142" y="-616"/>
         </scene>
         <!--Україна-->
         <scene sceneID="agh-Sz-oET">
@@ -284,6 +284,7 @@
                                             <outlet property="descUkraineLabel" destination="moh-7N-njc" id="QNq-lk-yJ0"/>
                                             <outlet property="imgUkraineView" destination="o8w-k1-yff" id="YYD-9R-1Lp"/>
                                             <outlet property="titleUkraineLabel" destination="VfC-3u-vG9" id="xUm-r1-spN"/>
+                                            <segue destination="pO1-ld-tdA" kind="show" identifier="ShowDetailUkraine" id="gCC-MP-HRp"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -352,6 +353,7 @@
                                             <outlet property="descWorldLabel" destination="PTr-L9-NCb" id="qrI-vZ-9yK"/>
                                             <outlet property="imgWorldView" destination="F6E-eX-mNb" id="VDb-os-JmA"/>
                                             <outlet property="titleWorldLabel" destination="jyw-97-bCs" id="hze-OR-xcH"/>
+                                            <segue destination="pO1-ld-tdA" kind="show" identifier="ShowDetailWorld" id="8L2-v5-dOq"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -375,4 +377,7 @@
             <point key="canvasLocation" x="1844" y="107"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="8L2-v5-dOq"/>
+    </inferredMetricsTieBreakers>
 </document>

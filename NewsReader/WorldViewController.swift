@@ -93,6 +93,19 @@ class WorldViewController: BaseViewController, UITableViewDelegate, UITableViewD
         return self.worldArticles?.count ?? 0
     }
     
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "ShowDetailWorld" {
+            let detailVC: DetailAllNewsVC? = segue.destination as? DetailAllNewsVC
+            let cell: WorldTableViewCell? = sender as? WorldTableViewCell
+            
+            if cell != nil && detailVC != nil {
+                detailVC?.contentDescr = cell?.descWorldLabel!.text
+                detailVC?.contentText = cell?.titleWorldLabel!.text
+                detailVC?.contentImage = cell?.imgWorldView!.image
+            }
+        }
+    }
+    
 }
 
 extension UIImageView {

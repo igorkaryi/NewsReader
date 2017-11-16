@@ -93,6 +93,19 @@ class UkraineViewController: BaseViewController, UITableViewDelegate, UITableVie
         return self.ukraineArticles?.count ?? 0
     }
     
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "ShowDetailUkraine" {
+            let detailVC: DetailAllNewsVC? = segue.destination as? DetailAllNewsVC
+            let cell: UkraineViewCell? = sender as? UkraineViewCell
+            
+            if cell != nil && detailVC != nil {
+                detailVC?.contentDescr = cell?.descUkraineLabel!.text
+                detailVC?.contentText = cell?.titleUkraineLabel!.text
+                detailVC?.contentImage = cell?.imgUkraineView!.image
+            }
+        }
+    }
+    
 }
 
 extension UIImageView {

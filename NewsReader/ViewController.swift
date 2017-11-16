@@ -20,8 +20,6 @@ class ViewController: BaseViewController, UITableViewDelegate, UITableViewDataSo
         self.addSlideMenuButton()
         fetchArticles()
         
-     //   navigationController?.navigationBar.barTintColor = UIColor.green
-        
         refreshControl = UIRefreshControl()
         refreshControl.attributedTitle = NSAttributedString(string: "Оновлення інформації")
         refreshControl.addTarget(self, action: #selector(refresh), for: .valueChanged)
@@ -91,10 +89,6 @@ class ViewController: BaseViewController, UITableViewDelegate, UITableViewDataSo
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return self.articles?.count ?? 0
     }
-    
-//    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-//        print("fe")
-//    }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "ShowDetailAllNews" {
