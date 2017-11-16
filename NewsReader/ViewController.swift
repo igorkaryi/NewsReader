@@ -51,7 +51,7 @@ class ViewController: BaseViewController, UITableViewDelegate, UITableViewDataSo
                             
                             let str = desc.replacingOccurrences(of: "<[^>]+>", with: "", options: .regularExpression, range: nil) // - убрать теги
                             print(str)
-
+                            
                             article.desc = str
                             article.headLine = title
                             article.url = url
@@ -90,6 +90,22 @@ class ViewController: BaseViewController, UITableViewDelegate, UITableViewDataSo
         return self.articles?.count ?? 0
     }
     
+//    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+//        print("fe")
+//    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "ShowDetailAllNews" {
+            let detailVC: DetailAllNewsVC? = segue.destination as? DetailAllNewsVC
+            let cell: ArticleCell? = sender as? ArticleCell
+            
+            if cell != nil && detailVC != nil {
+                detailVC?.contentText = cell?.titleLabel!.text
+                detailVC?.contentImage = cell?.imgView!.image
+            }
+        }
+    }
+    
 }
 
 extension UIImageView {
@@ -113,13 +129,4 @@ extension UIImageView {
     }
 }
 
-func prepareForSegue(segue:UIStoryboardSegue, sender:AnyObject?){
-    if segue.identifier == "commander" {
-        if let nextVC: DetailAllNewsVC = segue.destination as? DetailAllNewsVC {
-                
-                nextVC.titleLabel.text = "rgferg"
-            }
-}
 
-
-}

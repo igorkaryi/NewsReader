@@ -78,9 +78,9 @@
 			children = (
 				53F14EBE1FB1EB3F00B286B9 /* AppDelegate.swift */,
 				53F14EC01FB1EB3F00B286B9 /* ViewController.swift */,
+				8473B9371FB9F06A0074D7C2 /* DetailAllNewsVC.swift */,
 				53F14ED01FB1EEE700B286B9 /* ArticleCell.swift */,
 				53F14ED21FB1F01800B286B9 /* Article.swift */,
-				8473B9371FB9F06A0074D7C2 /* DetailAllNewsVC.swift */,
 				5326C4231FB47EE3002531D3 /* UkraineViewController.swift */,
 				5326C4211FB47E91002531D3 /* UkraineViewCell.swift */,
 				5326C4251FB47F89002531D3 /* UkraineArticle.swift */,
