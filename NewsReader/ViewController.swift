@@ -20,6 +20,8 @@ class ViewController: BaseViewController, UITableViewDelegate, UITableViewDataSo
         self.addSlideMenuButton()
         fetchArticles()
         
+     //   navigationController?.navigationBar.barTintColor = UIColor.green
+        
         refreshControl = UIRefreshControl()
         refreshControl.attributedTitle = NSAttributedString(string: "Оновлення інформації")
         refreshControl.addTarget(self, action: #selector(refresh), for: .valueChanged)
@@ -100,6 +102,7 @@ class ViewController: BaseViewController, UITableViewDelegate, UITableViewDataSo
             let cell: ArticleCell? = sender as? ArticleCell
             
             if cell != nil && detailVC != nil {
+                detailVC?.contentDescr = cell?.descLabel!.text
                 detailVC?.contentText = cell?.titleLabel!.text
                 detailVC?.contentImage = cell?.imgView!.image
             }
