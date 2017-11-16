@@ -11,8 +11,7 @@ import UIKit
 class UkraineArticle: NSObject {
     var headLineUkraine: String?
     var descUkraine: String?
-    var authorUkraine: String?
-    var urlUkraine: String?
+    var dateUkraine: String?
     var imageURLUkraine: String?
     
 }

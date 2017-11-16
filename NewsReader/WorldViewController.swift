@@ -48,14 +48,14 @@ class WorldViewController: BaseViewController, UITableViewDelegate, UITableViewD
                 if let articlesFromJson = json["posts"] as? [[String : AnyObject]] {
                     for articleFromJson in articlesFromJson {
                         let wArticle = WorldArticle()
-                        if let title = articleFromJson["title"] as? String, let desc = articleFromJson["content"] as? String, let url = articleFromJson["url"] as? String, let urlToImage = articleFromJson["thumbnail"] as? String {
+                        if let title = articleFromJson["title"] as? String, let desc = articleFromJson["content"] as? String, let date = articleFromJson["date"] as? String, let urlToImage = articleFromJson["thumbnail"] as? String {
                             
                             let str = desc.replacingOccurrences(of: "<[^>]+>", with: "", options: .regularExpression, range: nil) // - убрать теги
                             print(str)
                             
                             wArticle.descWorld = str
                             wArticle.headLineWorld = title
-                            wArticle.urlWorld = url
+                            wArticle.dateWorld = date
                             wArticle.imageURLWorld = urlToImage
                         }
                         self.worldArticles?.append(wArticle)
@@ -79,6 +79,7 @@ class WorldViewController: BaseViewController, UITableViewDelegate, UITableViewD
         let cell = worldTableView.dequeueReusableCell(withIdentifier: "WorldCell", for: indexPath) as! WorldTableViewCell
         
         cell.titleWorldLabel.text = self.worldArticles?[indexPath.item].headLineWorld
+        cell.dateWorldLabel.text = self.worldArticles?[indexPath.item].dateWorld
         cell.descWorldLabel.text = self.worldArticles?[indexPath.item].descWorld
         cell.imgWorldView.downloadImageWorld(from: (self.worldArticles?[indexPath.item].imageURLWorld!)!)
         
@@ -101,6 +102,7 @@ class WorldViewController: BaseViewController, UITableViewDelegate, UITableViewD
             if cell != nil && detailVC != nil {
                 detailVC?.contentDescr = cell?.descWorldLabel!.text
                 detailVC?.contentText = cell?.titleWorldLabel!.text
+                detailVC?.contentDate = cell?.dateWorldLabel!.text
                 detailVC?.contentImage = cell?.imgWorldView!.image
             }
         }

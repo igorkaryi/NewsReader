@@ -13,7 +13,8 @@ class UkraineViewCell: UITableViewCell {
     @IBOutlet weak var imgUkraineView: UIImageView!
     @IBOutlet weak var descUkraineLabel: UILabel!
     @IBOutlet weak var titleUkraineLabel: UILabel!
-
+    @IBOutlet var dateUkraineLabel: UILabel!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

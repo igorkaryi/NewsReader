@@ -13,10 +13,12 @@ class DetailAllNewsVC: UIViewController {
     @IBOutlet var titleLabel: UILabel!
     @IBOutlet var artImage: UIImageView!
     @IBOutlet var descrTextView: UITextView!
+    @IBOutlet var dateLabel: UILabel!
     
     var contentText: String!
     var contentImage: UIImage!
     var contentDescr: String!
+    var contentDate: String!
     
     override func viewDidLoad() {
         
@@ -31,6 +33,10 @@ class DetailAllNewsVC: UIViewController {
         
         if contentDescr != nil {
             self.descrTextView.text = contentDescr!
+        }
+        
+        if contentDate != nil {
+            self.dateLabel.text = contentDate!
         }
         
     }

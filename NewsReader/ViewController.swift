@@ -9,6 +9,7 @@
 import UIKit
 
 class ViewController: BaseViewController, UITableViewDelegate, UITableViewDataSource {
+    
     @IBOutlet weak var tableView: UITableView!
     
     var articles: [Article]? = []
@@ -47,14 +48,14 @@ class ViewController: BaseViewController, UITableViewDelegate, UITableViewDataSo
                 if let articlesFromJson = json["posts"] as? [[String : AnyObject]] {
                     for articleFromJson in articlesFromJson {
                         let article = Article()
-                        if let title = articleFromJson["title"] as? String, let desc = articleFromJson["content"] as? String, let url = articleFromJson["url"] as? String, let urlToImage = articleFromJson["thumbnail"] as? String {
+                        if let title = articleFromJson["title"] as? String, let desc = articleFromJson["content"] as? String, let date = articleFromJson["date"] as? String, let urlToImage = articleFromJson["thumbnail"] as? String {
                             
                             let str = desc.replacingOccurrences(of: "<[^>]+>", with: "", options: .regularExpression, range: nil) // - убрать теги
                             print(str)
                             
+                            article.date = date
                             article.desc = str
                             article.headLine = title
-                            article.url = url
                             article.imageURL = urlToImage
                         }
                         self.articles?.append(article)
@@ -77,6 +78,7 @@ class ViewController: BaseViewController, UITableViewDelegate, UITableViewDataSo
         
         cell.titleLabel.text = self.articles?[indexPath.item].headLine
         cell.descLabel.text = self.articles?[indexPath.item].desc
+        cell.dateLabel.text = self.articles?[indexPath.item].date
         cell.imgView.downloadImage(from: (self.articles?[indexPath.item].imageURL!)!)
         
         return cell
@@ -98,6 +100,7 @@ class ViewController: BaseViewController, UITableViewDelegate, UITableViewDataSo
             if cell != nil && detailVC != nil {
                 detailVC?.contentDescr = cell?.descLabel!.text
                 detailVC?.contentText = cell?.titleLabel!.text
+                detailVC?.contentDate = cell?.dateLabel!.text
                 detailVC?.contentImage = cell?.imgView!.image
             }
         }

@@ -11,8 +11,7 @@ import UIKit
 class WorldArticle: NSObject {
     var headLineWorld: String?
     var descWorld: String?
-    var authorWorld: String?
-    var urlWorld: String?
+    var dateWorld: String?
     var imageURLWorld: String?
     
 }

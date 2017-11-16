@@ -13,7 +13,8 @@ class WorldTableViewCell: UITableViewCell {
     @IBOutlet weak var imgWorldView: UIImageView!
     @IBOutlet weak var descWorldLabel: UILabel!
     @IBOutlet weak var titleWorldLabel: UILabel!
-
+    @IBOutlet var dateWorldLabel: UILabel!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

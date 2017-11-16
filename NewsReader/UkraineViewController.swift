@@ -48,14 +48,14 @@ class UkraineViewController: BaseViewController, UITableViewDelegate, UITableVie
                 if let articlesFromJson = json["posts"] as? [[String : AnyObject]] {
                     for articleFromJson in articlesFromJson {
                         let article = UkraineArticle()
-                        if let title = articleFromJson["title"] as? String, let desc = articleFromJson["content"] as? String, let url = articleFromJson["url"] as? String, let urlToImage = articleFromJson["thumbnail"] as? String {
+                        if let title = articleFromJson["title"] as? String, let desc = articleFromJson["content"] as? String, let date = articleFromJson["date"] as? String, let urlToImage = articleFromJson["thumbnail"] as? String {
                             
                             let str = desc.replacingOccurrences(of: "<[^>]+>", with: "", options: .regularExpression, range: nil) // - убрать теги
                             print(str)
                             
                             article.descUkraine = str
                             article.headLineUkraine = title
-                            article.urlUkraine = url
+                            article.dateUkraine = date
                             article.imageURLUkraine = urlToImage
                         }
                         self.ukraineArticles?.append(article)
@@ -70,9 +70,7 @@ class UkraineViewController: BaseViewController, UITableViewDelegate, UITableVie
                 print(error)
             }
         }
-        
         task.resume()
-        
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -80,6 +78,7 @@ class UkraineViewController: BaseViewController, UITableViewDelegate, UITableVie
         
         cell.titleUkraineLabel.text = self.ukraineArticles?[indexPath.item].headLineUkraine
         cell.descUkraineLabel.text = self.ukraineArticles?[indexPath.item].descUkraine
+        cell.dateUkraineLabel.text = self.ukraineArticles?[indexPath.item].dateUkraine
         cell.imgUkraineView.downloadImageUkraine(from: (self.ukraineArticles?[indexPath.item].imageURLUkraine!)!)
         
         return cell
@@ -101,6 +100,7 @@ class UkraineViewController: BaseViewController, UITableViewDelegate, UITableVie
             if cell != nil && detailVC != nil {
                 detailVC?.contentDescr = cell?.descUkraineLabel!.text
                 detailVC?.contentText = cell?.titleUkraineLabel!.text
+                detailVC?.contentDate = cell?.dateUkraineLabel!.text
                 detailVC?.contentImage = cell?.imgUkraineView!.image
             }
         }
